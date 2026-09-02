@@ -9,5 +9,3 @@ print(name)
 number = 2515
 print(number)
 print("you are a mc")
-yo = "sexa"
-print(yo)
