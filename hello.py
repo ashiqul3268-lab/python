@@ -9,5 +9,5 @@ print(name)
 number = 2515
 print(number)
 print("you are a mc")
-no = yes
+no = "yes"
 print(no)

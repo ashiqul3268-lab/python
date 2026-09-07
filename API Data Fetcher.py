@@ -1,7 +1,7 @@
 import requests
 while True:  
     user_input = input("Enter todo ID(or q to quit): ")  
-    if user_input.lower == "q":
+    if user_input.lower() == "q":
         exit()
     try:
         user_input = int(user_input)
