@@ -13,6 +13,9 @@ while True:
     if user_input <= 0:
         print("Enter a positive whole number")
         continue
+    if user_input > 20:
+        print("Enter a number in 20")
+        continue
     break
 numbers = string.digits
 letters = string.ascii_letters
