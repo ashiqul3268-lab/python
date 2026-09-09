@@ -1,8 +1,9 @@
-print("1. Addition")
-print("2. Substraction")
-print("3. Multiplication")
-print("4. Division")
 while True:
+    print("1. Addition")
+    print("2. Substraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("Enter q to quit")
     uset_input = input("Choose an operation: ")
     if uset_input.lower() == "q":
         break
