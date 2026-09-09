@@ -1,24 +1,33 @@
-print("I am thinking of a number between 1 and 100")
 import random
+print("I am thinking between 1 and 100")
 secret_number = random.randint(1,100)
-low_near_number = secret_number - 10
-high_near_number = secret_number + 10
+near_low_number = secret_number - 10
+near_low_number = max(near_low_number,1)
+near_high_number = secret_number + 10
+near_high_number = min(near_high_number,100)
 attempt = 0
 while True:
-    user_input = int(input("guess a number:"))
+    try:
+       user_input_number = int(input("Guess a number: "))
+    except ValueError:
+        print("Enter a valid number.")
+        continue
+    if user_input_number not in range(1,101):
+        print("Enter a valid number.")
+        continue
     attempt += 1
-    if  low_near_number <= user_input <= secret_number - 1:
-         print(f"your guess : {user_input}")
-         print("You are almost there. Try some near high numbers")
-    elif secret_number + 1 <= user_input <= high_near_number:
-          print(f"your guess : {user_input}")
-          print("You are almost there. Try some near low numbers")
-    if user_input > high_near_number:
-         print(f"your guess : {user_input}")
-         print("Greater than the number. Try something low.")
-    elif user_input < low_near_number:
-         print(f"your guess : {user_input}")
-         print("Lower than the the number. Try something high")
-    elif user_input == secret_number:
-         print(f"🎉 Correct! You got it in {attempt} attempts.")
-         break
+    if near_low_number <= user_input_number < secret_number:
+        print(f"your guess : {user_input_number}")
+        print("You are almost there. Try some near high numbers.")
+    elif near_high_number >= user_input_number > secret_number:
+        print(f"your guess : {user_input_number}")
+        print("You are almost there. Try some near low numbers.")
+    elif user_input_number < near_low_number:
+        print(f"your guess : {user_input_number}")
+        print("Lower than the secret number. Try some high numbers.")
+    elif user_input_number > near_high_number:
+        print(f"your guess : {user_input_number}")
+        print("Greater than the secret number. Try some low numbers")
+    elif user_input_number == secret_number:
+        print(f"🎉Correct! You got it in {attempt} attempts")
+        break
