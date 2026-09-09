@@ -1,18 +1,18 @@
 while True:
     print("1. Addition")
-    print("2. Substraction")
+    print("2. Subtraction")
     print("3. Multiplication")
     print("4. Division")
     print("Enter q to quit")
-    uset_input = input("Choose an operation: ")
-    if uset_input.lower() == "q":
+    user_input = input("Choose an operation: ")
+    if user_input.lower() == "q":
         break
     try:
-        uset_input = int(uset_input)
+        user_input = int(user_input)
     except ValueError:
         print("Please enter a valid number.")
         continue
-    if uset_input not in range(1 , 5):
+    if user_input not in range(1 , 5):
         print("Please enter a valid number.")
         continue
     while True:
@@ -24,16 +24,16 @@ while True:
             print("Please enter a valid number")
             continue
             
-    if uset_input == 1:
+    if user_input == 1:
         addition = num1 + num2
         print(f"Result: {addition}")
-    elif uset_input == 2:
-        substraction = num1 - num2
-        print(f"Result: {substraction}")
-    elif uset_input == 3:
+    elif user_input == 2:
+        subtraction = num1 - num2
+        print(f"Result: {subtraction}")
+    elif user_input == 3:
         multiplication = num1 * num2
         print(f"Result: {multiplication}")
-    elif uset_input == 4:
+    elif user_input == 4:
         if num2 != 0:
             division = num1 / num2
             print(f"Result: {division}")
