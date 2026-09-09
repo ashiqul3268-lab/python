@@ -1,18 +1,25 @@
-try:
-   user_input = int(input("How long should the password be? "))
-except ValueError:
-   print("invalid input please enter a whole number")
-   exit()
 import random
 import string
-number = string.digits
-letter = string.ascii_letters
-punctuation = string.punctuation
-password = number + letter + punctuation
-if user_input <= 0:
-  print("Invalid password length")
-  exit()
+print("Enter q to quit.")
+while True:
+    user_input = input("How long the password should be? ")
+    if user_input.lower() == "q":
+        exit()
+    try:
+        user_input = int(user_input)
+    except ValueError:
+        print("Please input a valid number.")
+        continue
+    if user_input <= 0:
+        print("Enter a positive whole number")
+        continue
+    break
+numbers = string.digits
+letters = string.ascii_letters
+punctuations = string.punctuation
+password = numbers + letters + punctuations
 generated_password = ""
-for x in range(user_input):
-    generated_password += random.choice(password)
+#for x in range(user_input):
+#    generated_password += random.choice(password)
+generated_password = "".join(random.choice(password) for _ in range(user_input))
 print(f"Generated password: {generated_password}")
