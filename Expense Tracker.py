@@ -40,7 +40,7 @@ while True:
         if not all_expenses:
             print("NO expense added yet!")
         for number,expenses in enumerate(all_expenses, start=1):
-            print(f"{number}. {expenses['Expense_name']} | {expenses['Amount']} | {expenses['Category']} |")
+            print(f"{number}. Expense: {expenses['Expense_name']} | Amount: {expenses['Amount']} | Category: {expenses['Category']} |")
     elif user_input == 3:
         while True:
             try:
